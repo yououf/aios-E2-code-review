@@ -1,0 +1,28 @@
+<h2>Employees</h2>
+<button (click)="addEmployee()">Add Employee</button>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Budget</th>
+      <th>Role</th>
+      <th>Arrival Date</th>
+      <th>Items</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.budget }}</td>
+      <td>{{ employee.role }}</td>
+      <td>{{ employee.arrivalDate }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let item of employee.items">
+            {{ item.type }} - {{ item.price }}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
